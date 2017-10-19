@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    meta(charset="utf-8")/
+    // mobile
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")/
+  body
+    block content
+    script.
+      window.funnelServer = "#{funnelServer}"
+    script(src='/javascripts/main.js')

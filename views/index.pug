@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div.all-wrap
+    div.header
+      h1= title
+      div.status
+        p= "Funnel: "
+          span#funnel-status.funnel-status
+          span= ". Lysnarservice status: "
+          span#service-status.service-status
+
+    div#stream.stream

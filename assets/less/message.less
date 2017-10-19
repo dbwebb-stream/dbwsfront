@@ -1,0 +1,56 @@
+@borderRadius: 10px;
+
+.message-wrap {
+  border-radius: @borderRadius;
+  border: 1px solid #999;
+
+  margin-bottom: 1rem;
+}
+
+.message-header {
+  border-radius: @borderRadius @borderRadius 0 0;
+  //   border-top: 1px solid #999;
+
+  padding: 0.5rem;
+}
+
+.message-wrap,
+.message-header {
+  @media all and (max-width: 900px) {
+    border: none;
+    border-top: 1px solid #999;
+    border-radius: 0;
+  }
+}
+
+.irc .message-header {
+  background-color: #333;
+  color: #eee;
+}
+
+.gitter .message-header {
+  background-color: rgb(127, 187, 103);
+  color: #eee;
+}
+
+.message-to {
+  font-weight: bolder;
+}
+
+.message-body {
+  font-size: larger;
+  padding: 0.5rem;
+}
+
+.message-body:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.message-image {
+  float: right;
+  border-radius: 3px;
+  max-width: 65px;
+  margin: 7px;
+}

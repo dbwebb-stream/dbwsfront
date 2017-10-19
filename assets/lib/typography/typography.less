@@ -1,0 +1,511 @@
+/**
+ * Typographic font families to choose from.
+ */
+// Monospace
+@fontFamilyCourier:         "Courier New", Courier, monospace;
+@fontFamilyMonospace:       monospace;
+
+// Serif
+@fontFamilyCambria:         Cambria, Georgia, Times, 'Times New Roman', serif;
+@fontFamilyTimes:           Times, 'Times New Roman', serif;
+@fontFamilyGaramond:        Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, "Times New Roman", Times, serif;
+
+// Sans-serif
+@fontFamilyHelvetica:       Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@fontFamilyCalibri:         Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@fontFamilyMyriadPro:       MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
+@fontFamilyHelveticaNeue:   "Helvetica Neue", Helvetica, Arial, sans-serif;
+@fontFamilyArial:           Arial, sans-serif;
+
+
+
+/**
+ * Default font-families
+ */
+@fontFamilyHeadings:  @fontFamilyCambria;
+@fontFamilyBody:      @fontFamilyCalibri;
+@fontFamilyCode:      @fontFamilyCourier;
+
+/**
+ * Typographic sizes for horisontal rythm.
+ */
+
+/**
+ * Magic number for vertical rythm
+ * @magicNumber = @fontSizeBody * @lineHeight
+ */
+@magicNumber:   24px; /* 16px - 100%/1.5 */
+//@magicNumber:   22px; /* 16px - 100%/1.375 */
+@fontSizeBody:  16px;
+@lineHeight:    (unit(@magicNumber) / unit(@fontSizeBody));
+
+@fontSizeH1: 2.375em;
+@fontSizeH2: 1.875em;
+@fontSizeH3: 1.375em;
+@fontSizeH4: 1.25em;
+@fontSizeH5: 1em;
+@fontSizeH6: 0.875em;
+
+@fontSizeCodeInline:  1.25em;
+@fontSizeCodeBlock:   1.25em;
+@lineHeightCodeBlock: 1.6;
+
+@fontSizeSupSub: 0.75em;
+
+@fontSizeSmall: 0.875em;
+
+
+
+/**
+ * Size and lineheight calculation for magicNumber 24
+ *
+ * 3em     * 16px   = 48 => line-height: 48    = 1
+ * 2.875em * 16px   = 46 => line-height: 48/44 = 1.0435
+ * 2.75em  * 16px   = 44 => line-height: 48/44 = 1.0909
+ * 2.625em * 16px   = 42 => line-height: 48/42 = 1.1429
+ * 2.5em   * 16px   = 40 => line-height: 48/40 = 1.2
+ * 2.375em * 16px   = 38 => line-height: 48/38 = 1.2632
+ * 2.25em  * 16px   = 36 => line-height: 48/36 = 1.3333
+ * 2.125em * 16px   = 34 => line-height: 48/34 = 1.4118
+ * 2em     * 16px   = 32 => line-height: 48/32 = 1.5
+ * 1.875em * 16px   = 30 => line-height: 48/30 = 1.6
+ * 1.75em  * 16px   = 28 => line-height: 48/28 = 1.7143
+ * 1.625em * 16px   = 26 => line-height: 48/26 = 1.8462
+ * 1.5em   * 16px   = 24 => line-height: 24    = 1
+ * 1.375em * 16px   = 22 => line-height: 24/22 = 1.0909
+ * 1.25em  * 16px   = 20 => line-height: 24/20 = 1.2
+ * 1.125em * 16px   = 18 => line-height: 24/18 = 1.3333
+ * 1em     * 16px   = 16 => line-height: 24/16 = 1.5
+ * 0.875em * 16px   = 14 => line-height: 24/14 = 1.7143
+ * 0.75em  * 16px   = 12 => line-height: 24/12 = 2
+ */
+
+/**
+ * Size and lineheight calculation for magicNumber 22
+ *
+ * 3em     * 16px   = 48 => line-height: 66/48 = 1.375
+ * 2.875em * 16px   = 46 => line-height: 66/46 = 1.4348
+ * 2.75em  * 16px   = 44 => line-height: 44    = 1
+ * 2.625em * 16px   = 42 => line-height: 44/42 = 1.0476
+ * 2.5em   * 16px   = 40 => line-height: 44/40 = 1.1
+ * 2.375em * 16px   = 38 => line-height: 44/38 = 1.1579
+ * 2.25em  * 16px   = 36 => line-height: 44/36 = 1.2222
+ * 2.125em * 16px   = 34 => line-height: 44/34 = 1.2941
+ * 2em     * 16px   = 32 => line-height: 44/32 = 1.375
+ * 1.875em * 16px   = 30 => line-height: 44/30 = 1.4667
+ * 1.75em  * 16px   = 28 => line-height: 44/28 = 1.5714
+ * 1.625em * 16px   = 26 => line-height: 44/26 = 1.6923
+ * 1.5em   * 16px   = 24 => line-height: 44/24 = 1.8333
+ * 1.375em * 16px   = 22 => line-height: 22    = 1
+ * 1.25em  * 16px   = 20 => line-height: 22/20 = 1.1
+ * 1.125em * 16px   = 18 => line-height: 22/18 = 1.2222
+ * 1em     * 16px   = 16 => line-height: 22/16 = 1.375
+ * 0.875em * 16px   = 14 => line-height: 22/14 = 1.5714
+ * 0.75em  * 16px   = 12 => line-height: 22/12 = 1.8333
+*/
+
+/**
+ * Typographic mixins.
+ */
+.font(@fontSize: 100.01%, @fontFamily: @fontFamilyBody) {
+    font: @fontSize/@lineHeight @fontFamily;
+}
+
+.fontSize(@fontSize) {
+    font-size: @fontSize;
+    line-height: @lineHeight / unit(@fontSize) * ceil(unit(@fontSize) / @lineHeight);
+}
+
+// 5/4 for smaller font-size, incremental leading.
+
+/**
+ * Typographic defaults.
+ */
+@colorH1BorderBottom: #666;
+@colorH2BorderBottom: #999;
+@borderSizeH1: 1px;
+@borderSizeH2: 1px;
+
+
+/**
+ * Headings
+ */
+.typographyHeadings() {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: @fontFamilyHeadings;
+        margin-top: @magicNumber;
+        margin-bottom: @magicNumber;
+        img {
+            margin: 0;
+        }
+    }
+
+    h1 {
+        .fontSize(@fontSizeH1);
+        font-weight: normal;
+
+        border-bottom: @borderSizeH1 solid @colorH1BorderBottom;
+        margin-bottom: @magicNumber - @borderSizeH1;
+
+        // If header below h1, then assume larger margin top
+        & ~ h1,
+        & ~ h2,
+        & ~ h3,
+        & ~ h4,
+        & ~ h5,
+        & ~ h6,
+         {
+            margin-top: @magicNumber * 2;
+        }
+
+        // Single margin when subheader follows directly
+        & + h2 {
+            margin-top: @magicNumber;
+        }
+    }
+
+    h2 {
+        .fontSize(@fontSizeH2);
+        font-weight: normal;
+
+        margin-top: @magicNumber * 2;
+        margin-bottom: @magicNumber - @borderSizeH2;
+
+        border-bottom: @borderSizeH2 solid @colorH2BorderBottom;
+
+        & + h3 {
+            margin-top: @magicNumber;
+        }
+    }
+
+    h3 {
+        .fontSize(@fontSizeH3);
+        font-weight: normal;
+    }
+
+    h4 {
+        .fontSize(@fontSizeH4);
+        font-weight: normal;
+    }
+
+    h5 {
+        .fontSize(@fontSizeH5);
+    }
+
+    h6 {
+        .fontSize(@fontSizeH6);
+    }
+}
+
+
+
+/**
+ * Text elements
+ */
+@colorTypographyMark: #000;
+@bgColorTypographyMark:  #ffff99;
+
+@colorBlockquoteBorder: #eee;
+@sizeBlockquoteBorder: 4px;
+
+.typographyTextElements() {
+    p {
+        margin-top: @magicNumber;
+        margin-bottom: @magicNumber;
+    }
+
+    small,
+    .small,
+    .smaller {
+        font-size: @fontSizeSmall;
+    }
+
+    strong,
+    b {
+        font-weight: bold;
+    }
+
+    mark {
+        color: @colorTypographyMark;
+        background-color: @bgColorTypographyMark;
+    }
+
+    abbr[title],
+    dfn[title] {
+        text-decoration: dotted underline;
+    }
+
+    em,
+    i,
+    dfn {
+        font-style: italic;
+    }
+
+    sub,
+    sup {
+        font-size: @fontSizeSupSub;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+    }
+
+    sup {
+        top: -0.5em;
+    }
+
+    sub {
+        bottom: -0.25em;
+    }
+
+    blockquote {
+        border-left: @sizeBlockquoteBorder solid @colorBlockquoteBorder;
+        padding-left: 1em;
+        margin-left: 0;
+        margin-bottom: @magicNumber;
+    }
+}
+
+
+
+/**
+ * Display source code.
+ */
+@borderColorCodeInline: #ccc;
+@bgColorCodeInline:     #eee;
+@bgColorCodeBlock:      #eee;
+@colorCodeBlockBorder:  #ccc;
+@borderSizeCodeblock:   1px;
+
+.typographyCodeElements() {
+    pre,
+    code,
+    kbd,
+    samp,
+    .code {
+        font-size: @fontSizeCodeInline;
+        font-family: @fontFamilyMonospace;
+    }
+
+    code,
+    samp {
+        border: 1px solid @borderColorCodeInline;
+    }
+
+    code {
+        background-color: @bgColorCodeInline;
+    }
+
+    pre,
+    div.code,
+    pre code {
+        font-size: @fontSizeCodeBlock;
+        line-height: @lineHeightCodeBlock;
+        white-space: pre;
+    }
+
+    pre {
+        margin-top: @magicNumber;
+        margin-bottom: @magicNumber;
+    }
+
+    pre code {
+        display: block;
+        overflow: auto;
+    }
+
+    div.code,
+    pre code {
+        border-top:    @borderSizeCodeblock solid @colorCodeBlockBorder;
+        border-bottom: @borderSizeCodeblock solid @colorCodeBlockBorder;
+
+        margin-top:    @magicNumber - @borderSizeCodeblock;
+        margin-bottom: @magicNumber - @borderSizeCodeblock;
+
+        padding-top:    @magicNumber / 2;
+        padding-bottom: @magicNumber / 2;
+        padding-left: 0.5em;
+
+        background-color: @bgColorCodeBlock;
+    }
+}
+
+
+
+/**
+ * Lists
+ */
+.typographyListElements() {
+    //ul,ol{margin:0.6875em 1.5em 1.375em 0;padding-left:1.5em;}
+
+    ul,
+    ol {
+        margin-top:    @magicNumber;
+        margin-bottom: @magicNumber;
+        padding-left: 1.5em;
+
+        p {
+            margin-top:    @magicNumber / 2;
+            margin-bottom: @magicNumber / 2;
+        }
+
+        & ul,
+        & ol {
+            margin: 0;
+        }
+    }
+
+    ul {
+          list-style-type: disc;
+    }
+
+    ol {
+          list-style-type: decimal;
+    }
+
+    // dl dt dd
+    dl {
+        margin-top:    @magicNumber;
+        margin-bottom: @magicNumber;
+
+        &.horizontal {
+            @margin: 7em;
+
+            dt {
+                clear: left;
+                float: left;
+                width: @margin
+            }
+
+            dd {
+                margin-left: @margin + 1em;
+                display:block;
+            }
+        }
+    }
+
+    dt {
+        //font-weight: bold;
+    }
+
+    dd {
+        margin-left: 1.5em;
+    }
+}
+
+
+
+/**
+ * Tables. Because of the need for padding on TH and TD, the vertical rhythm
+ * on table cells has to be 1.5*@magic-number.
+ */
+@colorTableHeaderBorder:    #aaa;
+@sizeTableHeaderBorder:     2px;
+
+@bgColorTableStripe:        #fafafa;
+@colorTableRowBorder:       #ccc;
+
+@colorTableRowHover:        #000;
+@bgColorTableRowHover:      #f6f6f6;
+@colorTableRowBorderHover:  #666;
+
+.typographyTableElements() {
+    table {
+
+    }
+
+    article table,
+    .table,
+    .table1,
+    .table2 {
+        margin-top:    @magicNumber;
+        margin-bottom: @magicNumber;
+    }
+
+    table.full-width,
+    article .table,
+    .table,
+    .table2 {
+        width: 100%;
+    }
+
+    // A more styled table layout
+    article table,
+    .table,
+    .table2 {
+        border-collapse: collapse;
+
+        caption {
+            .fontSize(@fontSizeSmall);
+            text-align: left;
+            font-style: italic;
+        }
+
+        thead {
+            box-shadow:  0 1px 0 @colorTableHeaderBorder;
+        }
+
+        th {
+            vertical-align: bottom;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: @magicNumber / 4;
+        }
+
+        tr {
+            box-shadow:  0 1px 0 @colorTableRowBorder;
+
+            &:hover {
+                color: @colorTableRowHover;
+                background-color: @bgColorTableRowHover;
+                box-shadow:  0 1px 0 @colorTableRowBorderHover;
+            }
+        }
+
+        tfoot {
+
+        }
+    }
+
+    // Stripe each even row in table
+    table.striped {
+        tbody {
+            tr:nth-child(even) td,
+            tr.even td {
+                background-color: @bgColorTableStripe;
+            }
+        }
+    }
+}
+
+
+
+/**
+ * More typography elements
+ */
+@bgColorHr: #fff;
+
+.typographyOtherElements() {
+    hr {
+        position: relative;
+        top: -2px;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+
+        margin-top: 1.5 * @magicNumber - 1px;
+        margin-bottom: 1.5 * @magicNumber;
+
+        &:after {
+            content: "§";
+            position: relative;
+            top: -0.7em;
+            left: 50%;
+            padding: 0 0.25em;
+            background-color: @bgColorHr;
+        }
+    }
+}
